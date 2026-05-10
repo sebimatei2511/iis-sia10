@@ -3,7 +3,7 @@ SELECT java_method(
     'org.spark.service.rest.RESTEnabledSQLService',
     'createJSONViewFromREST',
     'vw_cost_living_json',
-    'http://localhost:8094/DSA-SQL-PostgresService/rest/cost/CostView'
+    'http://localhost:8094/rest/cost/CostView'
 );
 
 -- Pas 2: Explodarea array-ului JSON într-un tabel SQL structurat
