@@ -3,7 +3,7 @@ SELECT java_method(
     'org.spark.service.rest.RESTEnabledSQLService',
     'createJSONViewFromREST',
     'vw_oracle_salaries_json',
-    'http://localhost:8092/DSA-SQL-OracleService/rest/salaries/SalariesView'
+    'http://localhost:8092/rest/salarii/SalariiView'
 );
 
 -- Pas 2: Crearea vederii structurate
