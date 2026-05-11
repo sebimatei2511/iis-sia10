@@ -77,3 +77,17 @@ ORDER BY 1, 2;
 --------------------------------------------------------------------------------
 SELECT * FROM OLAP_VIEW_REGIONAL_ANALYSIS;
 SELECT * FROM OLAP_VIEW_INCOME_VS_REGION;
+-------------------------------------------------------------------------
+integrarea a 3 tehnologii diferite (SQL, NoSQL, Documente).
+-----------------------------------------------------------------------------
+CREATE OR REPLACE VIEW view_olap_salary_analysis AS
+SELECT 
+    s.City, 
+    c.region as Continent,
+    s.`Average Monthly Salary after Tax in 2020` as Net_Salary,
+    cl.meal_price as Cost_of_Meal,
+    (s.`Average Monthly Salary after Tax in 2020` / cl.meal_price) as Purchasing_Power_Index
+FROM view_salaries_doc s
+JOIN view_countries_mongo c ON s.Country = c.name
+JOIN view_cost_living_doc cl ON s.City = cl.city
+WHERE s.`Average Monthly Salary after Tax in 2020` > 0;
